@@ -117,11 +117,18 @@ body {
   font-weight: 500;
   transition: all 0.2s ease;
   border-radius: 9999px;
+  /* Touch-friendly minimum size */
+  min-height: 44px;
 }
 
 .btn-primary:hover {
   opacity: 0.9;
-  transform: scale(1.02);
+}
+
+@media (min-width: 640px) {
+  .btn-primary:hover {
+    transform: scale(1.02);
+  }
 }
 
 .btn-outline {
@@ -129,6 +136,8 @@ body {
   background: transparent;
   transition: all 0.2s ease;
   border-radius: 9999px;
+  /* Touch-friendly minimum size */
+  min-height: 44px;
 }
 
 .btn-outline:hover {
@@ -139,45 +148,22 @@ body {
 /* Product image container */
 .product-image-container {
   position: relative;
-  border-radius: 1rem;
+  border-radius: 0.75rem;
   overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.12);
+}
+
+@media (min-width: 640px) {
+  .product-image-container {
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  }
 }
 
 .product-image-container img {
   width: 100%;
   height: auto;
   display: block;
-}
-
-/* Juxtaposition effect */
-.juxtapose-container {
-  position: relative;
-}
-
-.juxtapose-back {
-  position: relative;
-  z-index: 1;
-}
-
-.juxtapose-front {
-  position: absolute;
-  top: 2rem;
-  right: -2rem;
-  width: 55%;
-  z-index: 2;
-  transform: rotate(2deg);
-}
-
-@media (max-width: 768px) {
-  .juxtapose-front {
-    position: relative;
-    top: -2rem;
-    right: 0;
-    width: 90%;
-    margin-left: auto;
-    transform: rotate(0deg);
-  }
 }
 
 /* Section divider */
@@ -192,7 +178,19 @@ body {
   opacity: 0.4;
   transition: opacity 0.2s ease;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 640px) {
+  .partner-logo {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .partner-logo {
+    font-size: 1.1rem;
+  }
 }
 
 .partner-logo:hover {
@@ -201,19 +199,39 @@ body {
 
 /* Service card */
 .service-card {
-  padding: 2rem;
+  padding: 1.25rem;
   text-align: center;
 }
 
+@media (min-width: 640px) {
+  .service-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .service-card {
+    padding: 2rem;
+  }
+}
+
 .service-icon {
-  width: 48px;
-  height: 48px;
-  margin: 0 auto 1rem;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--border);
   border-radius: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 1rem;
+  }
 }
 
 /* Selection color */
