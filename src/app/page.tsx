@@ -266,7 +266,7 @@ function ProductSection() {
           <div className="hidden md:block relative">
             {/* Dark mode - back */}
             <motion.div 
-              className="product-image-container"
+              className="product-image-container relative z-10"
               whileHover={{ scale: 1.01 }}
               transition={{ duration: 0.3 }}
             >
@@ -282,23 +282,24 @@ function ProductSection() {
 
             {/* Light mode - front overlay */}
             <motion.div 
-              className="absolute top-8 -right-4 lg:right-4 w-[50%] product-image-container"
-              initial={{ opacity: 0, x: 60 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              className="absolute top-12 right-0 lg:-right-8 w-[55%] z-20"
+              initial={{ opacity: 0, x: 60, rotate: 2 }}
+              animate={isInView ? { opacity: 1, x: 0, rotate: 2 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
               whileHover={{ scale: 1.02, rotate: 0 }}
-              style={{ transform: "rotate(2deg)" }}
             >
-              <Image 
-                src="/moxie-trade light.png" 
-                alt="Moxie Trading Interface - Light Mode"
-                width={800}
-                height={500}
-                className="rounded-xl"
-              />
+              <div className="product-image-container">
+                <Image 
+                  src="/moxie-trade light.png" 
+                  alt="Moxie Trading Interface - Light Mode"
+                  width={800}
+                  height={500}
+                  className="rounded-xl"
+                />
+              </div>
               {/* Badge */}
-              <div className="absolute -bottom-3 left-3 bg-card border border-border rounded-full px-3 py-1.5 shadow-lg">
-                <span className="text-xs sm:text-sm font-medium">Light & Dark Themes</span>
+              <div className="absolute -bottom-4 left-4 bg-card border border-border rounded-full px-4 py-2 shadow-lg z-30">
+                <span className="text-sm font-medium">Light & Dark Themes</span>
               </div>
             </motion.div>
           </div>
