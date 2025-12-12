@@ -23,8 +23,8 @@ import {
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
     transition: { duration: 0.6 }
   }
@@ -67,16 +67,16 @@ function Header() {
 
         {/* Desktop CTA */}
         <div className="hidden sm:flex items-center gap-3">
-          <a 
-            href="https://github.com/ubadineke/pred-perp-dex" 
-            target="_blank" 
+          <a
+            href="https://github.com/ubadineke/pred-perp-dex"
+            target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
             <Github className="w-5 h-5" />
           </a>
-          <a 
-            href="https://moxie-dex.vercel.app/trade" 
+          <a
+            href="https://app.moxie.markets"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary px-4 sm:px-5 py-2 text-sm font-medium flex items-center gap-2"
@@ -87,7 +87,7 @@ function Header() {
         </div>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           className="sm:hidden p-2 -mr-2 text-foreground"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
@@ -106,31 +106,31 @@ function Header() {
             className="sm:hidden border-t border-border bg-background"
           >
             <div className="px-4 py-4 flex flex-col gap-4">
-              <a 
-                href="#product" 
+              <a
+                href="#product"
                 className="text-base py-2 text-foreground"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Product
               </a>
-              <a 
-                href="#services" 
+              <a
+                href="#services"
                 className="text-base py-2 text-foreground"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Services
               </a>
               <div className="flex items-center gap-4 pt-2 border-t border-border">
-                <a 
-                  href="https://github.com/ubadineke/pred-perp-dex" 
-                  target="_blank" 
+                <a
+                  href="https://github.com/ubadineke/pred-perp-dex"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
                   <Github className="w-5 h-5" />
                 </a>
-                <a 
-                  href="https://moxie-dex.vercel.app/trade" 
+                <a
+                  href="https://app.moxie.markets"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary flex-1 py-3 text-sm font-medium flex items-center justify-center gap-2"
@@ -169,7 +169,7 @@ function HeroSection() {
           </motion.div>
 
           {/* Headline */}
-          <motion.h1 
+          <motion.h1
             variants={fadeInUp}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-4 sm:mb-6 tracking-tight"
           >
@@ -179,18 +179,18 @@ function HeroSection() {
           </motion.h1>
 
           {/* Subtitle */}
-          <motion.p 
+          <motion.p
             variants={fadeInUp}
             className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto mb-8 sm:mb-10 px-4"
           >
-            The first prediction market perpetuals DEX on Solana. 
+            The first prediction market perpetuals DEX on Solana.
             Go long or short on real-world events with up to 50x leverage.
           </motion.p>
 
           {/* CTA Button */}
           <motion.div variants={fadeInUp}>
-            <a 
-              href="https://moxie-dex.vercel.app/trade" 
+            <a
+              href="https://app.moxie.markets"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 text-base font-medium"
@@ -265,13 +265,13 @@ function ProductSection() {
           {/* Desktop: Juxtaposition layout */}
           <div className="hidden md:block relative">
             {/* Dark mode - back */}
-            <motion.div 
+            <motion.div
               className="product-image-container relative z-10"
               whileHover={{ scale: 1.01 }}
               transition={{ duration: 0.3 }}
             >
-              <Image 
-                src="/moxie-trade dark.png" 
+              <Image
+                src="/moxie-trade dark.png"
                 alt="Moxie Trading Interface - Dark Mode"
                 width={1200}
                 height={700}
@@ -281,7 +281,7 @@ function ProductSection() {
             </motion.div>
 
             {/* Light mode - front overlay */}
-            <motion.div 
+            <motion.div
               className="absolute top-12 right-0 lg:-right-8 w-[55%] z-20"
               initial={{ opacity: 0, x: 60, rotate: 2 }}
               animate={isInView ? { opacity: 1, x: 0, rotate: 2 } : {}}
@@ -289,8 +289,8 @@ function ProductSection() {
               whileHover={{ scale: 1.02, rotate: 0 }}
             >
               <div className="product-image-container">
-                <Image 
-                  src="/moxie-trade light.png" 
+                <Image
+                  src="/moxie-trade light.png"
                   alt="Moxie Trading Interface - Light Mode"
                   width={800}
                   height={500}
@@ -306,30 +306,30 @@ function ProductSection() {
 
           {/* Mobile: Stacked layout */}
           <div className="md:hidden space-y-6">
-            <motion.div 
+            <motion.div
               className="product-image-container"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
             >
-        <Image
-                src="/moxie-trade dark.png" 
+              <Image
+                src="/moxie-trade dark.png"
                 alt="Moxie Trading Interface - Dark Mode"
                 width={800}
                 height={500}
                 className="rounded-lg"
-          priority
-        />
+                priority
+              />
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="product-image-container relative"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <Image 
-                src="/moxie-trade light.png" 
+              <Image
+                src="/moxie-trade light.png"
                 alt="Moxie Trading Interface - Light Mode"
                 width={800}
                 height={500}
@@ -480,8 +480,8 @@ function CTASection() {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-          <a 
-            href="https://moxie-dex.vercel.app/trade" 
+          <a
+            href="https://app.moxie.markets"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary w-full sm:w-auto px-6 sm:px-8 py-3 text-base font-medium flex items-center justify-center gap-2"
@@ -490,7 +490,7 @@ function CTASection() {
             Launch App
           </a>
           <a
-            href="https://github.com/ubadineke/pred-perp-dex" 
+            href="https://github.com/ubadineke/pred-perp-dex"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline w-full sm:w-auto px-6 sm:px-8 py-3 text-base font-medium flex items-center justify-center gap-2"
@@ -518,26 +518,26 @@ function Footer() {
 
           {/* Social links */}
           <div className="flex items-center gap-4 sm:gap-6">
-            <a 
-              href="https://twitter.com" 
-              target="_blank" 
+            <a
+              href="https://twitter.com"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors text-xs sm:text-sm flex items-center gap-1.5"
             >
               <Twitter className="w-4 h-4" />
               <span className="hidden sm:inline">Twitter</span>
             </a>
-            <a 
-              href="https://github.com/ubadineke/pred-perp-dex" 
-              target="_blank" 
+            <a
+              href="https://github.com/ubadineke/pred-perp-dex"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors text-xs sm:text-sm flex items-center gap-1.5"
             >
               <Github className="w-4 h-4" />
               <span className="hidden sm:inline">GitHub</span>
             </a>
-            <a 
-              href="#" 
+            <a
+              href="#"
               className="text-muted-foreground hover:text-foreground transition-colors text-xs sm:text-sm flex items-center gap-1.5"
             >
               <MessageCircle className="w-4 h-4" />
@@ -563,6 +563,6 @@ export default function Home() {
       <StatsSection />
       <CTASection />
       <Footer />
-      </main>
+    </main>
   );
 }
